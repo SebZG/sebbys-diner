@@ -22,81 +22,25 @@
     <main>
 
         <section id="menu-container" class="menu-container">
-
-            <!-- <div id="menu-item-wrapper" class="menu-item-wrapper">
-                <div class="emoji-info-wrapper">
-                    <span id="item-emoji" class="item-emoji">🍕</span>
-                    <div id="item-info-wrapper" class="item-info-wrapper">
-                        <h3 class="item-name">Pizza</h3>
-                        <p class="item-ingredients">pepperoni, mushroom, mozzarella</p>
-                        <p class="item-price">$14</p>
-                    </div>
-                </div>
-                <button id="btn-add" class="btn-add">+</button>
-            </div>
-
-            <div id="menu-item-wrapper" class="menu-item-wrapper">
-                <div class="emoji-info-wrapper">
-                    <span id="item-emoji" class="item-emoji">🍕</span>
-                    <div id="item-info-wrapper" class="item-info-wrapper">
-                        <h3 class="item-name">Pizza</h3>
-                        <p class="item-ingredients">pepperoni, mushroom, mozzarella</p>
-                        <p class="item-price">$14</p>
-                    </div>
-                </div>
-                <button id="btn-add" class="btn-add">+</button>
-            </div> -->
-
         </section>
 
         <section id="order-summary-container" class="order-summary-container">
-
-            <h3 class="order-summary-title">Your order</h3>
-
-            <div id="order-items-container" class="order-items-container">
-<!-- 
-                <div id="order-items-wrapper" class="order-items-wrapper">
-                    <div id="order-name-btn-wrapper" class="order-name-btn-wrapper">
-                        <h3 class="item-name">Pizza</h3>
-                        <button class="btn-remove">remove</button>
-                    </div>
-                    <p class="item-price">$14</p>
-                </div>
-
-                <div id="order-items-wrapper" class="order-items-wrapper">
-                    <div id="order-name-btn-wrapper" class="order-name-btn-wrapper">
-                        <h3 class="item-name">Pizza</h3>
-                        <button class="btn-remove">remove</button>
-                    </div>
-                    <p class="item-price">$14</p>
-                </div> -->
-
-            </div>
-
-            <span class="divider"></span>
-
-            <div id="total-price-wrapper" class="total-price-wrapper">
-                <h3 class="total-price">Total Price:</h3>
-                <p class="price">$0</p>
-            </div>
-
-            <button id="btn-checkout" class="btn-checkout">Checkout</button>
         </section>
-
-
 
     </main>
 
     <div id="payment-modal" class="payment-modal">
+
         <h2 class="payment-modal-title">Enter card details</h2>
 
         <Form id="payment-form" class="payment-form">
             <input id="name" type="text" minlength="3" name="name" placeholder="Enter your name" required>
-            <input id="card-num" type="number" minlength="16" maxlength="16" name="card-num"
-                placeholder="Enter card number" required>
-            <input id="cvv" type="number" minlength="3" maxlength="3" name="cvv" placeholder="Enter CVV" required>
-            <button id="btn-pay" class="btn-pay">Pay</button>
+            <input id="card-num" type="text" minlength="16" maxlength="16" name="card-num"
+                placeholder="Enter card number" pattern="\d{16}" required>
+            <input id="cvv" type="text" minlength="3" maxLength="3" name="cvv" placeholder="Enter CVV" pattern="\d{3}" required>
+            <button id="btn-pay" class="btn-pay" type="submit">Pay</button>
         </Form>
+
     </div>
 
     <script src="index.js" type="module"></script>

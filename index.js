@@ -1,10 +1,13 @@
 import data from "/data.js";
 
 const menuContainer = document.getElementById("menu-container");
-const orderItemsContainer = document.getElementById("order-items-container");
 const orderSummaryContainer = document.getElementById("order-summary-container");
+const paymentModal = document.getElementById("payment-modal");
+const paymentForm = document.getElementById("payment-form");
 
 const orderArr = [];
+let orderSubmitted = false;
+let name = "";
 
 menuContainer.innerHTML = data.map(({ name, ingredients, price, emoji, id }) =>
     `<div id="menu-item-wrapper" class="menu-item-wrapper">
@@ -31,29 +34,49 @@ function handleAddClick(itemId) {
 }
 
 function renderOrderItems() {
-    if (orderArr.length) {
-        orderItemsContainer.innerHTML = orderArr.map(({ name, price, id }) =>
-            `<div id="order-items-wrapper" class="order-items-wrapper">
-                <h3 class="item-name">${name}</h3>
-                <div id="order-btn-price-wrapper" class="order-btn-price-wrapper">
-                    <button class="btn-remove" data-remove="${id}">remove</button>
-                    <p class="price">$${price}</p>
-                </div>
+    if (orderArr.length && !orderSubmitted) {
+        orderSummaryContainer.innerHTML =
+            `<h3 class="order-summary-title">Your order</h3>
+
+            <div id="order-items-container" class="order-items-container">
+                ${orderArr.map(({ name, price, id }) =>
+                `<div id="order-items-wrapper" class="order-items-wrapper">
+                        <h3 class="item-name">${name}</h3>
+                        <div id="order-btn-price-wrapper" class="order-btn-price-wrapper">
+                            <button class="btn-remove" data-remove="${id}">remove</button>
+                            <p class="price">$${price}</p>
+                        </div>
+                    </div>
+                `).join("")}
+            </div >
+
+            <span class="divider"></span>
+
+            <div id="total-price-wrapper" class="total-price-wrapper">
+                <h3 class="total-price">Total Price:</h3>
+                <p class="price">$${orderArr.reduce((sum, { price }) => sum + price, 0)}</p>
             </div>
-        `).join("");
+
+            <button id="btn-checkout" class="btn-checkout">Checkout</button>
+        `;
 
         document.querySelectorAll(".btn-remove").forEach((btn) =>
             btn.addEventListener("click", (e) =>
                 handleRemoveClick(e.target.dataset.remove)));
 
-        document.querySelector("#total-price-wrapper .price").textContent = `
-                $${orderArr.reduce((sum, { price }) => sum + price, 0)}
-            `;
+        document.getElementById("btn-checkout").addEventListener("click", () => {
+            paymentModal.style.display = "block";
+        });
 
         orderSummaryContainer.style.display = "block";
 
-    } else {
-        orderSummaryContainer.style.display = "none";
+    } else if (orderArr.length && orderSubmitted) {
+        orderSummaryContainer.innerHTML =
+            `<div id="thank-you" class="thank-you">
+                <p>Thanks ${name}! Your order is on its way!</p>
+            </div>
+        `
+        orderSummaryContainer.style.display = "block";
     }
 }
 
@@ -64,3 +87,18 @@ function handleRemoveClick(itemId) {
         renderOrderItems();
     }
 }
+
+paymentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    orderSubmitted = true;
+
+    const paymentFormData = new FormData(paymentForm);
+    name = paymentFormData.get("name");
+    const cardNum = paymentFormData.get("card-num");
+    const cvv = paymentFormData.get("cvv");
+
+    paymentModal.style.display = "none";
+
+    renderOrderItems();
+});

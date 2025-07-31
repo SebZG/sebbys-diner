@@ -1,10 +1,10 @@
-/* UTILITIES */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* UTILITIES */
 
 .display-none {
     display: none;
@@ -13,11 +13,9 @@
 /* DEFAULTS */
 
 body {
-    /* width: 600px; */
     max-width: 1024px;
     margin: 0 auto;
     font-family: "Smythe", system-ui;
-    /* background-color: dodgerblue; */
     background-color: whitesmoke;
 }
 
@@ -237,4 +235,17 @@ main {
 .btn-pay:hover {
     background-color: #12b880;
     cursor: pointer
+}
+
+/* THANK YOU MESSAGE */
+
+.thank-you {
+    /* display: none; */
+    background-color: #ECFDF5;
+    padding: 3rem 6rem;
+    color: #065F46;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px;
 }
