@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+
+    font-family: "Smythe", system-ui;
+}
+
+/* HEADER */
+
+header {
+    background-image: url("./images/hamburger.jpg");
+    background-size: cover;
+    background-position: center;
+    color: whitesmoke;
+    height: 168px;
+    padding: 2.5rem 3rem;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+header p {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+/* MAIN */
