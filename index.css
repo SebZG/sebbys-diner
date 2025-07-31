@@ -7,8 +7,8 @@
 body {
     width: 600px;
     margin: 0 auto;
-
     font-family: "Smythe", system-ui;
+    background-color: whitesmoke;
 }
 
 /* HEADER */
@@ -33,3 +33,57 @@ header p {
 }
 
 /* MAIN */
+
+/* MAIN - MENU CONTAINER */
+
+.menu-container {
+    /* padding: 3rem; */
+}
+
+.menu-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D2D2D2;
+    padding: 3rem;
+}
+
+.emoji-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.item-emoji {
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+
+.item-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.item-name {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.item-ingredients {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #888;
+}
+
+.item-price {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.btn-add {
+    background-color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #888;
+}
