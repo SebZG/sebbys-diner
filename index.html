@@ -83,7 +83,21 @@
             <button id="btn-checkout" class="btn-checkout">Checkout</button>
         </section>
 
+
+
     </main>
+
+    <div id="payment-modal" class="payment-modal">
+        <h2 class="payment-modal-title">Enter card details</h2>
+
+        <Form id="payment-form" class="payment-form">
+            <input id="name" type="text" minlength="3" name="name" placeholder="Enter your name" required>
+            <input id="card-num" type="number" minlength="16" maxlength="16" name="card-num"
+                placeholder="Enter card number" required>
+            <input id="cvv" type="number" minlength="3" maxlength="3" name="cvv" placeholder="Enter CVV" required>
+            <button id="btn-pay" class="btn-pay">Pay</button>
+        </Form>
+    </div>
 
     <script src="index.js"></script>
 </body>
