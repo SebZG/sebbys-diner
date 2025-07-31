@@ -8,6 +8,10 @@ body {
     width: 600px;
     margin: 0 auto;
     font-family: "Smythe", system-ui;
+    background-color: dodgerblue;
+}
+
+header, main {
     background-color: whitesmoke;
 }
 
@@ -36,16 +40,16 @@ header p {
 
 /* MAIN - MENU CONTAINER */
 
-/* .menu-container {
-    padding: 3rem;
-} */
+.menu-container {
+    padding: 0 3rem;
+}
 
 .menu-item-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #D2D2D2;
-    padding: 3rem;
+    padding: 3rem 0;
 }
 
 .emoji-info-wrapper {
@@ -86,4 +90,75 @@ header p {
     height: 50px;
     border-radius: 50%;
     border: 1px solid #888;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.btn-add:hover {
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+/* MAIN - ORDER SUMMARY */
+
+.order-summary {
+    padding: 3rem 4rem;
+}
+
+.order-summary-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.order-items-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.order-name-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-remove {
+    border: none;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.total-price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total-price {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.divider {
+    display: inline-block;
+    border: 1px solid #000;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.btn-checkout {
+    width: 100%;
+    height: 60px;
+    background-color: #16DB99;
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.btn-checkout:hover {
+    background-color: #12b880;
+    cursor: pointer;
 }

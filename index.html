@@ -50,21 +50,37 @@
         </section>
 
         <section id="order-summary" class="order-summary">
-            <h3>Your order</h3>
-            <div id="order-item-wrapper" class="order-item-wrapper">
-                <div id="order-name-btn-wrapper" class="order-name-btn-wrapper">
-                    <h3 class="item-name">Pizza</h3>
-                    <button class="remove-btn">remove</button>
+
+            <h3 class="order-summary-title">Your order</h3>
+
+            <div id="order-items-container" class="order-items-container">
+
+                <div id="order-items-wrapper" class="order-items-wrapper">
+                    <div id="order-name-btn-wrapper" class="order-name-btn-wrapper">
+                        <h3 class="item-name">Pizza</h3>
+                        <button class="btn-remove">remove</button>
+                    </div>
+                    <p class="item-price">$14</p>
                 </div>
-                <p class="item-price">$14</p>
+
+                <div id="order-items-wrapper" class="order-items-wrapper">
+                    <div id="order-name-btn-wrapper" class="order-name-btn-wrapper">
+                        <h3 class="item-name">Pizza</h3>
+                        <button class="btn-remove">remove</button>
+                    </div>
+                    <p class="item-price">$14</p>
+                </div>
+
             </div>
+
+            <span class="divider"></span>
 
             <div id="total-price-wrapper" class="total-price-wrapper">
-                <h3 class="total-price">Total Price</h3>
+                <h3 class="total-price">Total Price:</h3>
                 <p class="item-price">$14</p>
             </div>
 
-            <button>Checkout</button>
+            <button id="btn-checkout" class="btn-checkout">Checkout</button>
         </section>
 
     </main>
