@@ -36,9 +36,9 @@ header p {
 
 /* MAIN - MENU CONTAINER */
 
-.menu-container {
-    /* padding: 3rem; */
-}
+/* .menu-container {
+    padding: 3rem;
+} */
 
 .menu-item-wrapper {
     display: flex;
