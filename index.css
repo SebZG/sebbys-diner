@@ -14,7 +14,7 @@
 
 body {
     /* width: 600px; */
-    max-width: 1200px;
+    max-width: 1024px;
     margin: 0 auto;
     font-family: "Smythe", system-ui;
     /* background-color: dodgerblue; */
@@ -24,6 +24,7 @@ body {
 header,
 main {
     background-color: whitesmoke;
+
 }
 
 /* HEADER */
@@ -56,7 +57,7 @@ main {
 /* MAIN - MENU CONTAINER */
 
 .menu-container {
-    padding: 0 3rem;
+    padding: 0 6rem;
 }
 
 .menu-item-wrapper {
@@ -89,12 +90,12 @@ main {
 }
 
 .item-ingredients {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: #888;
 }
 
-.item-price {
+.price {
     font-size: 1.25rem;
     font-weight: 400;
 }
@@ -116,14 +117,16 @@ main {
 
 /* MAIN - ORDER SUMMARY */
 
-.order-summary {
-    padding: 3rem 4rem;
+.order-summary-container {
+    display: none;
+    padding: 3rem 6rem;
 }
 
 .order-summary-title {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
+    margin-bottom: 2rem;
 }
 
 .order-items-wrapper {
@@ -133,7 +136,7 @@ main {
     margin-bottom: 0.5rem;
 }
 
-.order-name-btn-wrapper {
+.order-btn-price-wrapper {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -143,6 +146,14 @@ main {
     border: none;
     font-size: 0.75rem;
     color: #888;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background-color: whitesmoke;
+}
+
+.btn-remove:hover {
+    outline: 1px solid #555;
+    cursor: pointer;
 }
 
 .total-price-wrapper {
@@ -151,16 +162,17 @@ main {
     margin-bottom: 1rem;
 }
 
-.total-price {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
 .divider {
     display: inline-block;
     border: 1px solid #000;
     width: 100%;
     margin: 0.5rem 0;
+}
+
+.total-price {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 .btn-checkout {
@@ -181,6 +193,7 @@ main {
 /* PAYMENT MODAL */
 
 .payment-modal {
+    display: none;
     position: fixed;
     top: -300px;
     bottom: 0;
@@ -190,9 +203,7 @@ main {
     width: 524px;
     height: 542px;
     padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     background-color: whitesmoke;
     border-radius: 3px;
     box-shadow: 0 0 200px;
@@ -209,6 +220,8 @@ main {
     padding: 0 2rem;
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    border: 1px solid #888;
+    border-radius: 3px;
 }
 
 .btn-pay {
